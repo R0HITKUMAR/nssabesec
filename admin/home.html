@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Meta -->
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="keywords"
+    content="ABES,ABESEC,AKTU,NSS,National Service Scheme,ABES Engineering College,UPTU,India,Mahatma Gandhi,Delhi,New Delhi" />
+  <meta name="description"
+    content="Official Website of Admin | NSS (National Service Scheme) Club of ABES Enginnering College" />
+  <meta name="subject" content="NSS Club - ABES Engineering College">
+  <meta name="copyright" content="Rohit Kumar - Digital Head (NSS ABESEC)">
+  <meta name="revised" content="Rohit Kumar - Digital Head (NSS ABESEC), 14/11/2021" />
+  <meta name="author" content="Rohit Kumar - Digital Head (NSS ABESEC)" />
+  <link href="https://nssabesec.in" rel="canonical" />
+
+  <!--(Tittle)-->
+  <title>Admin | NSS ABESEC</title>
+
+  <!-- Favicon -->
+  <link rel="shortcut icon" href="./assets/images/nssabesec.png" type="image/x-icon">
+
+  <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.11.3/css/jquery.dataTables.min.css">
+  <link rel="stylesheet" href="https://cdn.datatables.net/buttons/2.1.0/css/buttons.dataTables.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+
+  <script src="https://kit.fontawesome.com/989bb54246.js"></script>
+  <link rel="stylesheet" href="./assets/css/styleadmin.css">
+
+</head>
+
+<body>
+
+  <div class="wrapper d-flex align-items-stretch">
+    <!-- Start of Sidebar -->
+    <nav id="sidebar" class="active">
+      <h1><a href="index.html" class="logo"><img src="./assets/images/nssabesec.png" width="60px"></a></h1>
+      <ul class="list-unstyled components mb-5">
+        <li class="active">
+          <a onclick="exit()" href="#home"><span class="fa fa-home"></span> Home</a>
+        </li>
+        <li>
+          <a onclick="viewQuery()" href="#query"><span class="fa fa-question"></span> Query</a>
+        </li>
+        <li>
+          <a onclick="viewNewsletter()" href="#newsletter"><span class="fa fa-paper-plane"></span> Newsletter</a>
+        </li>
+        <li>
+          <a onclick="viewVolunteer()" href="#volunteer"><span class="fa fa-users"></span> Volunteer</a>
+        </li>
+        <li>
+          <a onclick="viewSystemMail()" href="#system-mail"><span class="fa fa-envelope"></span> System Mail</a>
+        </li>
+        <li>
+          <a onclick="viewProfile()" href="#profile"> Profile</a>
+        </li>
+        <li>
+          <a onclick="logoutwithprompt()" href="#logout"> Logout</a>
+        </li>
+      </ul>
+      <div class="footer">
+        <p>
+          Copyright &copy; NSS ABESEC<br>
+          Designed by Rohit Kumar
+        </p>
+      </div>
+    </nav>
+    <!-- End of Sidebar -->
+
+    <!-- Start of Navbar  -->
+    <section id="content" class="m-2">
+      <nav class="navbar justify-content-between">
+        <button type="button" id="sidebarCollapse" class="btn btn-primary">
+          <i class="fa fa-arrow-right"></i>
+          <span class="sr-only">Toggle Menu</span>
+        </button>
+        <ul style="list-style-type:none;">
+          <li class="nav-item dropdown">
+            <a class="navbar-brand text-decoration-none" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown"
+              aria-haspopup="true" aria-expanded="false">
+              <img id="user-profile-photo" src="./assets/images/profile.png" width="35" height="35"
+                class="rounded-circle"><span id="user-name-card" class="ml-2"
+                style="color:rgb(0, 0, 0)!important;">Admin NSS (ABESEC)</span>
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+              <a onclick="exit()" class="dropdown-item" href="#dashboard">Dashboard</a>
+
+              <a onclick="viewProfile()" class="dropdown-item" href="#profile">Update Profile</a>
+
+              <a onclick="logoutwithprompt()" class="dropdown-item" href="#logout">Logout</a>
+
+            </div>
+          </li>
+        </ul>
+      </nav>
+      <!-- End of Navbar -->
+
+      <!-- Start of Counter Section -->
+      <section id="dashboard-section" class="m-4">
+        <h2 class="mb-4">Dashboard</h2>
+        <div id="counter-section" style="padding-bottom: 30px;">
+          <div class="container">
+            <div class="row">
+              <div class="four col-lg-2 col-md-4 col-sm-6 col-12 mb-3">
+                <div class="counter-box colored">
+                  <!-- <i class="fa fa-question"></i> -->
+                  <span class="counter" id="totalQueries">0</span>
+                  <p>Total Queries</p>
+                </div>
+              </div>
+              <div class="four col-lg-2 col-md-4 col-sm-6 col-12 mb-3">
+                <div class="counter-box colored">
+                  <span class="counter" id="pendingQueries">0</span>
+                  <p>Pending Queries</p>
+                </div>
+              </div>
+              <div class="four col-lg-2 col-md-4 col-sm-6 col-12 mb-3">
+                <div class="counter-box colored">
+                  <span class="counter" id="totalVolunteers">0</span>
+                  <p>Total Volunteers</p>
+                </div>
+              </div>
+
+              <div class="four col-lg-2 col-md-4 col-sm-6 col-12 mb-3">
+                <div class="counter-box colored"></i>
+                  <span class="counter" id="totalSubscription">0</span>
+                  <p>Total Subscription</p>
+                </div>
+              </div>
+              <div class="four col-lg-2 col-md-4 col-sm-6 col-12 mb-3">
+                <div class="counter-box colored"></i>
+                  <span class="counter" id="linkdashboard">0</span>
+                  <p>Total Links</p>
+                </div>
+              </div>
+              <div class="four col-lg-2 col-md-4 col-sm-6 col-12 mb-3">
+                <div class="counter-box colored"></i>
+                  <span class="counter" id="mailsidebar">&nbsp;</span>
+                  <p>Total Mails</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- End of Counter Section -->
+
+      <!-- Start of Query Section -->
+      <section id="contact-section" class="m-4" style="display:none !important;">
+        <h2 class="mb-4">Contact</h2>
+        <div class="container">
+          <!--Buttons-->
+          <div class="row">
+            <div class="col-md-6 col-0"></div>
+            <div class="col-md-2 col-12">
+              <a href="https://nss-abesec-default-rtdb.firebaseio.com/Contact-Form" target="_blank"
+                class="btn btn-sm btn-primary btn-block mb-3">Database</a>
+            </div>
+            <div class="col-md-2 col-6">
+              <a href="https://console.firebase.google.com/u/0/project/nss-abesec/storage/nss-abesec.appspot.com/files"
+                class="btn btn-sm btn-primary btn-block mb-3" target="_blank">Files</a>
+            </div>
+            <div class="col-md-2 col-6">
+              <button class="btn btn-sm btn-primary btn-block mb-3" onclick="exit()">Exit</button>
+            </div>
+          </div>
+          <!--Table-->
+          <div class="card card-body mb-5">
+            <div class="row mb-3 custom-control custom-switch d-flex">
+              <div class="col-6">
+                <input onchange="datatableContact()" type="checkbox" value="0" class="custom-control-input"
+                  id="contact-datatable">
+                <label class="custom-control-label" for="contact-datatable">Datatable</label>
+              </div>
+              <div class="col-6 flex-row-reverse">
+                <input type="checkbox" value="0" class="custom-control-input" id="sendMailAlert">
+                <label class="custom-control-label" for="sendMailAlert">Mail Alert</label>
+              </div>
+            </div>
+            <table class="table table-responsive-lg" id="contactTable">
+              <thead>
+                <tr>
+                  <th>S No.</th>
+                  <th width="10%">Timestamp</th>
+                  <th width="10%">Name</th>
+                  <th width="10%">Email ID</th>
+                  <th>Phone No.</th>
+                  <th width="20%">Message</th>
+                  <th width="20%">Status</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody id="contact-table"></tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+      <!-- End of Contact Section -->
+
+      <!-- Start of Query Section -->
+      <section id="volunteer-section" class="m-4" style="display:none !important;">
+        <h2 class="mb-4">Volunteer</h2>
+        <div class="container">
+          <!--Buttons-->
+          <div class="row">
+            <div class="col-md-6 col-0"></div>
+            <div class="col-md-2 col-12">
+              <a href="https://nss-abesec-default-rtdb.firebaseio.com/Volunteer-Form" target="_blank"
+                class="btn btn-sm btn-primary btn-block mb-3">Database</a>
+            </div>
+            <div class="col-md-2 col-6">
+              <a href="https://console.firebase.google.com/u/0/project/nss-abesec/storage/nss-abesec.appspot.com/files"
+                class="btn btn-sm btn-primary btn-block mb-3" target="_blank">Files</a>
+            </div>
+            <div class="col-md-2 col-6">
+              <button class="btn btn-sm btn-primary btn-block mb-3" onclick="exit()">Exit</button>
+            </div>
+          </div>
+          <!--Table-->
+          <div class="card card-body mb-5">
+            <div class="row mb-3 custom-control custom-switch d-flex">
+              <div class="col-6">
+                <input onchange="datatableVolunteer()" type="checkbox" value="0" class="custom-control-input"
+                  id="volunteer-datatable">
+                <label class="custom-control-label" for="volunteer-datatable">Datatable</label>
+              </div>
+            </div>
+            <table class="table table-responsive-lg" id="volunteerTable">
+              <thead>
+                <tr>
+                  <th>S No.</th>
+                  <th>Timestamp</th>
+                  <th>Name</th>
+                  <th>Email ID</th>
+                  <th>Contact No.</th>
+                  <th>Message</th>
+                  <th>Status</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody id="volunteer-table"></tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+      <!-- End of Volunteer Section -->
+
+      <!-- Start of Newsletter Section -->
+      <section id="newsletter-section" class="m-4" style="display:none !important;">
+        <h2 class="mb-4">Newsletter</h2>
+        <div class="container">
+          <!--Buttons-->
+          <div class="row">
+            <div class="col-md-6 col-0"></div>
+            <div class="col-md-2 col-12">
+              <a href="https://nss-abesec-default-rtdb.firebaseio.com/Newsletter-Form" target="_blank"
+                class="btn btn-sm btn-primary btn-block mb-3">Database</a>
+            </div>
+            <div class="col-md-2 col-6">
+              <a href="https://console.firebase.google.com/u/0/project/nss-abesec/storage/nss-abesec.appspot.com/files"
+                target="_blank" class="btn btn-sm btn-primary btn-block mb-3">Files</a>
+            </div>
+            <div class="col-md-2 col-6">
+              <button class="btn btn-sm btn-primary btn-block mb-3" onclick="exit()">Exit</button>
+            </div>
+          </div>
+          <!--Table-->
+          <div class="card card-body mb-5">
+            <div class="mb-3 custom-control custom-switch">
+              <input onclick="datatableNewsletter()" type="checkbox" class="custom-control-input"
+                id="newsletter-datatable">
+              <label class="custom-control-label" for="newsletter-datatable">Datatable</label>
+            </div>
+            <table class="table table-responsive-lg" id="newsletterTable">
+              <thead>
+                <tr>
+                  <th>S No.</th>
+                  <th>Date</th>
+                  <th>Name</th>
+                  <th>Email ID</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody id="newsletter-table"></tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+      <!-- End of Newsletter Section -->
+
+
+      <!-- Start of System Mail Section -->
+      <section id="system-mail" class="m-4" style="display:none !important;">
+        <h2 class="mb-4">System Mail</h2>
+        <div class="container">
+          <!--Buttons-->
+          <div class="row">
+            <div class="col-md-4 col-7">
+              <button class="btn btn-primary btn-block mb-3 btn-sm" type="button" data-toggle="collapse"
+                data-target="#viewMailbox" aria-expanded="false" aria-controls="viewMailbox">
+                Mailbox
+              </button>
+            </div>
+            <div class="col-md-3 col-5">
+              <a href="https://rohit-kumar-portfolio-ml-default-rtdb.firebaseio.com/Mailbox" target="_blank"
+                class="btn btn-primary btn-block mb-3 btn-sm">Database</a>
+            </div>
+            <div class="col-md-3 col-6">
+              <a href="https://console.firebase.google.com/u/0/project/rohit-kumar-portfolio-ml/storage/rohit-kumar-portfolio-ml.appspot.com/files/~2FMail-Attachments"
+                target="_blank" class="btn btn-sm btn-primary btn-block mb-3">Files</a>
+            </div>
+            <div class="col-md-2 col-6">
+              <button class="btn btn-sm btn-primary btn-block mb-3" onclick="exit()">Exit</button>
+            </div>
+          </div>
+
+          <!--Form-->
+          <div class="card card-body mb-5">
+            <div class="alert alert-success text-center col-12" role="alert" id="mail-send-alert"
+              style="display: none;">
+            </div>
+            <div class="row form-group">
+              <div class="col-md-6 col-12 mb-3">
+                <input type="text" class="form-control" name="Name" id="mail-name" placeholder="Name">
+              </div>
+              <div class="col-md-6 col-12">
+                <input type="email" class="form-control" name="Email" id="mail-to" placeholder="Email ID" required>
+              </div>
+              <div class="col-12">
+                <input type="text" class="form-control" name="Email" id="mail-subject" placeholder="Subject" required>
+              </div>
+            </div>
+            <div class="form-group">
+              <textarea type="text" id="mail-message" rows="6" class="form-control" placeholder="Message Here"
+                required></textarea>
+            </div>
+            <div class="d-none">
+              <input type="text" id="file-name">
+              <input type="url" id="file-url">
+            </div>
+            <div class="row ml-1" id="fileuploaddiv">
+              <div class="form-check col-md-6 col-12">
+                <input class="form-check-input" type="checkbox" id="include-attachemnt"
+                  onclick="showAttachmentUpload()">
+                <label class="form-check-label" for="include-attachemnt">
+                  Include Attachment
+                </label>
+              </div>
+              <div class="form-group col-md-6 col-12 d-none" id="mail-attachment-div">
+                <input type="file" id="mail-attachment" />
+                <input onclick="mailAttachmemtFileUpload()" id="mail-attachment-send" type="button"
+                  class="btn btn-primary btn-sm" style="float: right;" value="Upload">
+              </div>
+            </div>
+            <div class="form-group"><button style="float: right;" onclick="sendSystemMail()" type="submit"
+                id="sendMailButton" class="btn btn-primary">Send</button></div>
+          </div>
+
+          <!--Mailbox-->
+          <div class="collapse show" id="viewMailbox">
+            <div class="card card-body mb-5">
+              <table class="table table-responsive-lg" id="mailboxTable">
+                <thead>
+                  <tr>
+                    <th>S No.</th>
+                    <th>Timestamp</th>
+                    <th>Email ID</th>
+                    <th>Name</th>
+                    <th>Subject</th>
+                    <th>Message</th>
+                    <th>File</th>
+                    <th>Actions</th>
+                  </tr>
+                </thead>
+                <tbody id="mailbox-table"></tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- End of System Mail Section -->
+
+      <!-- Start of Profile Update Section -->
+      <section id="profile-section" class="m-4" style="display:none !important;">
+        <h2 class="mb-4">Profile</h2>
+        <div class="container">
+          <div class="row">
+            <div class="col-md-6 col-12">
+              <div class="card card-body mb-5">
+                <h5 class="text-center mb-3">Change Email / Password</h5>
+                <div class="form-group">
+                  <input type="text" class="form-control" id="User-Email1" placeholder="Email Address" required
+                    readonly>
+                </div>
+                <div class="input-group mb-3">
+                  <input type="password" id="new-password" class="form-control" placeholder="New Password"
+                    aria-describedby="changePassButton">
+                  <div class="input-group-append">
+                    <button onclick="changePass()" class="btn btn-primary" type="button"
+                      id="changePassButton">Update</button>
+                  </div>
+                </div>
+                <div class="input-group mb-3">
+                  <input type="email" id="newemail" class="form-control" placeholder="New Email Address"
+                    aria-describedby="updateemailButton">
+                  <div class="input-group-append">
+                    <button onclick="updateemail()" class="btn btn-primary" type="button"
+                      id="updateemailButton">Update</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-6 col-12">
+              <div class="card card-body mb-5">
+                <h5 class="text-center mb-3">Admin Details</h5>
+                <h6 style="color: black;">Name</h6>
+                <div class="input-group mb-3">
+                  <input type="text" class="form-control" id="new-name">
+                  <div class="input-group-append">
+                    <button onclick="updatename()" id="updatenameButton" class="btn btn-primary"
+                      type="button">Update</button>
+                  </div>
+                </div>
+                <h6 style="color: black;">Phone No.</h6>
+                <div class="input-group mb-3">
+                  <input type="text" class="form-control" id="new-phone">
+                  <div class="input-group-append">
+                    <button onclick="updatephone()" id="updatephoneButton" class="btn btn-primary"
+                      type="button">Update</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-6 col-12">
+              <div class="card card-body mb-5">
+                <h5 class="text-center mb-3">Update Popup</h5>
+                <h6 style="color: black;">Popup Text</h6>
+                <div class="input-group mb-3">
+                  <input type="text" class="form-control" id="popuptext">
+                  <div class="input-group-append">
+                    <button onclick="updatePopupText()" class="btn btn-primary" type="button">Update</button>
+                  </div>
+                </div>
+                <h6 style="color: black;">Popup Image</h6>
+                <div class="form-group">
+                  <input type="file" id="popupimg" />
+                  <input onclick="popUPimageUpload()" type="button" class="btn btn-primary btn-sm" style="float: right;"
+                    value="Upload">
+                </div>
+              </div>
+              <div class="card card-body mb-5">
+                <h5 class="text-center mb-3">Latest Updates</h5>
+                <div class="input-group mb-3">
+                  <input type="text" class="form-control" id="latestupdate" placeholder="Enter Latest Updates">
+                  <div class="input-group-append">
+                    <button onclick="latestUpdate()" class="btn btn-primary" type="button">Update</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-6 col-12">
+              <div class="card card-body mb-5">
+                <h5 class="text-center mb-3">Default</h5>
+                <button class="btn btn-sm btn-primary mb-1" onclick="defaultTitle()">Set Popup Title Default</button>
+                <button class="btn btn-sm btn-primary mb-1" onclick="defaultImage()">Set Popup Image Default</button>
+                <button class="btn btn-sm btn-primary mb-1" onclick="defaultUpdates()">Set Latest Updates
+                  Default</button>
+              </div>
+              <div class="card card-body mb-5">
+                <h5 class="text-center mb-3">File Upload</h5>
+                <div id="commonfilealert">
+                  <div class="input-group mb-3" id="defref">
+                    <select class="custom-select" id="defref-s">
+                      <option selected>Choose...</option>
+                      <option value="Poster">Poster</option>
+                      <option value="Mail-Attachments">Mail-Attachments</option>
+                      <option value="3">Others</option>
+                    </select>
+                    <div class="input-group-append">
+                      <button onclick="defaultReference()" class="btn btn-primary" type="button">Go</button>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <input type="text" id="defref-div" class="form-control d-none"
+                      placeholder="Enter Datastorage Reference" required>
+                  </div>
+                  <div class="form-group">
+                    <input type="file" id="common-file" />
+                    <input onclick="commonFileUpload()" type="button" class="btn btn-primary btn-sm"
+                      style="float: right;" value="Upload">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </section>
+  </div>
+
+
+  <!-- Firebase Scripts -->
+  <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-analytics.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-database.js"></script>
+
+  <!-- External JS -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <script
+    src="https://cdn.jsdelivr.net/combine/npm/sweetalert2@11.3.2/dist/sweetalert2.all.min.js,npm/sweetalert2@11.3.2/dist/sweetalert2.min.js,npm/sweetalert2@11.3.2,npm/sweetalert2@11.3.2/dist/sweetalert2.min.js"></script>
+  <script src="https://smtpjs.com/v3/smtp.js"></script>
+
+
+  <!--Data Tables-->
+  <script src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
+  <script src="https://cdn.datatables.net/buttons/2.1.0/js/dataTables.buttons.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
+  <script src="https://cdn.datatables.net/buttons/2.1.0/js/buttons.html5.min.js"></script>
+  <script src="https://cdn.datatables.net/buttons/2.1.0/js/buttons.print.min.js"></script>
+
+
+  <!-- Internal JS -->
+  <script src="./assets/js/firebase.js"></script>
+  <script src="./assets/js/admin-main.js"></script>
+  <script src="./assets/js/admin-db.js"></script>
+  <script src="./assets/js/admin-profile.js"></script>
+  <script src="./assets/js/admin-fileupload.js"></script>
+</body>
+
+</html>

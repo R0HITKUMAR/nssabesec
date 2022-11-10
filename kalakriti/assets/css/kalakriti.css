@@ -1,0 +1,266 @@
+@import url('https://fonts.googleapis.com/css2?family=Mochiy+Pop+P+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans+Narrow:wght@700&display=swap');
+
+body {
+    padding: 0px !important;
+    margin: 0px !important;
+}
+
+a,
+a:link,
+a:hover,
+a:visited {
+    color: inherit;
+    text-decoration: none !important;
+}
+
+h1 {
+    font-family: 'Mochiy Pop P One', cursive;
+    font-size: 2em;
+    color: rgb(0, 0, 0);
+    text-align: center !important;
+    margin-bottom: 40px;
+}
+
+.form-control {
+    font-family: 'PT Sans Narrow', sans-serif;
+    font-weight: 500px;
+    color: black;
+}
+
+/* Introduction Section */
+#introduction-section-sm {
+    display: none !important;
+}
+
+#introduction-section-lg h1 {
+    font-family: 'Mochiy Pop P One', cursive;
+    font-size: 3em;
+    color: rgb(0, 0, 0);
+    text-align: center;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+#introduction-section-lg h3 {
+    margin-top: 20px;
+    font-family: 'Titillium Web', sans-serif;
+    font-size: 1.5em;
+    color: rgb(0, 0, 0);
+    text-align: center;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+#introduction-section-sm h3 {
+    margin-top: 10px;
+    font-family: 'Titillium Web', sans-serif;
+    font-size: 1.5em;
+    color: rgb(0, 0, 0);
+    text-align: center;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+#introduction-section-sm h3 {
+    margin-top: 10px;
+    font-family: 'Titillium Web', sans-serif;
+    font-size: 1.2em;
+    color: rgb(0, 0, 0);
+    text-align: center;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+#introduction .step-button {
+    font-family: 'PT Sans Narrow', sans-serif;
+    font-size: 1.5em;
+    color: rgb(0, 0, 0);
+    text-align: center;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+
+#reg .regStart {
+    font-family: 'Titillium Web', sans-serif;
+    font-size: 1em;
+    margin-top: 10px;
+    font-weight: bold;
+
+}
+
+/* About Section */
+#about-section .row {
+    --bs-gutter-x: 0rem !important;
+}
+
+#about-section ul,
+li {
+    font-family: 'PT Sans Narrow', sans-serif;
+    font-weight: 500px;
+    color: black;
+}
+
+#about-section p {
+    font-weight: bolder;
+}
+
+#about-section .contact-person h1 {
+    font-family: 'PT Sans Narrow', sans-serif;
+    font-size: 1em;
+    color: rgb(0, 0, 0);
+    padding-bottom: 0px;
+    margin-bottom: 0px;
+    text-align: right !important;
+}
+
+/* Registration Section */
+#registration h6 {
+    margin-top: 20px;
+    font-size: 1.5em;
+    margin-bottom: auto;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    height: auto;
+    background-color: rgb(255, 255, 255);
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0px 0px 10px rgb(0, 0, 0);
+}
+
+#registration div {
+    font-family: 'PT Sans Narrow', sans-serif;
+}
+
+#registration label {
+    font-family: 'PT Sans Narrow', sans-serif;
+    font-weight: 500px;
+    color: black;
+}
+
+/* File Upload Section */
+#poster-upload h6 {
+    margin-top: 20px;
+    font-size: 1.5em;
+    margin-bottom: auto;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    height: auto;
+    background-color: rgb(255, 255, 255);
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0px 0px 10px rgb(0, 0, 0);
+}
+
+#poster-upload div {
+    font-family: 'PT Sans Narrow', sans-serif;
+}
+
+#poster-upload label {
+    font-family: 'PT Sans Narrow', sans-serif;
+    font-weight: 500px;
+    color: black;
+}
+
+#alredyuploaded h1 {
+    font-family: 'PT Sans Narrow', sans-serif;
+    font-size: 1.5em;
+    color: rgb(0, 0, 0);
+    text-align: center !important;
+}
+
+#alredyuploaded h3 {
+    font-family: 'PT Sans Narrow', sans-serif;
+    font-size: 1em;
+    color: rgb(0, 0, 0);
+    text-align: left !important;
+}
+
+#alredyuploaded span {
+    float: left !important;
+    font-family: 'PT Sans Narrow', sans-serif;
+    font-size: 1.1em;
+    color: rgb(0, 0, 0);
+    text-align: left !important;
+}
+
+#alredyuploaded li {
+    text-align: left !important;
+    float: left !important;
+    font-family: 'PT Sans Narrow', sans-serif;
+    font-size: 1.1em;
+}
+
+#alredyuploaded p {
+    font-family: 'PT Sans Narrow', sans-serif;
+    font-weight: 500px;
+    text-align: left !important;
+    color: black;
+}
+
+.modal h1{
+    font-family: 'PT Sans Narrow', sans-serif;
+    font-size: 1.5em;
+    color: rgb(0, 0, 0);
+    text-align: center !important;
+}
+/* Footer Section */
+footer .copyright_by {
+    font-family: 'Titillium Web', sans-serif;
+    font-size: 1em;
+    color: rgb(255, 255, 255);
+}
+
+footer .developer {
+    font-family: 'Titillium Web', sans-serif;
+    float: right;
+    font-size: 1em;
+    color: rgb(255, 255, 255);
+}
+
+
+@media only screen and (max-width: 900px) {
+    #introduction-section-sm {
+        display: block !important;
+    }
+    footer .dev{
+        display: none !important;
+    }
+    footer .cy{
+        text-align: center !important;
+    }
+    #introduction-section-lg {
+        display: none !important;
+    }
+
+}
+::-webkit-input-placeholder { /* WebKit browsers */
+    text-transform: none;
+}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+    text-transform: none;
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+    text-transform: none;
+}
+:-ms-input-placeholder { /* Internet Explorer 10+ */
+    text-transform: none;
+}
+::placeholder { /* Recent browsers */
+    text-transform: none;
+}
+
+.whatsapp-support {
+    color: black;
+    position: fixed;
+    right: 20px;
+    bottom: 50px;
+    font-size: 30px;
+    z-index: 99;
+    -webkit-transition: all 0.4s linear;
+    transition: all 0.4s linear;
+}

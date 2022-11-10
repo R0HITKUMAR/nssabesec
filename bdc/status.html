@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Meta -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords"
+        content="ABES,ABESEC,AKTU,NSS,National Service Scheme,ABES Engineering College,UPTU,India,Mahatma Gandhi,Delhi,New Delhi,KalaKriti,Poster Making Competition 2K22" />
+    <meta name="description"
+        content="Blood Donation Camp Organized by NSS Club in Collaboration with Rotary Ghaziabad North" />
+    <meta name="subject" content="Kalakriti - NSS Club - ABES Engineering College">
+    <meta name="copyright" content="Rohit Kumar - Digital Head (NSS ABESEC)">
+    <meta name="revised" content="Rohit Kumar - Digital Head (NSS ABESEC), 14/11/2021" />
+    <meta name="author" content="Rohit Kumar - Digital Head (NSS ABESEC)" />
+    <link href="https://nssabesec.in" rel="canonical" />
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="./files/nssabesec.png" type="image/x-icon">
+
+    <!-- Title -->
+    <title>Blood Donation Camp | NSS ABESEC</title>
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.11.3/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/buttons/2.1.0/css/buttons.dataTables.min.css">
+    <link rel="stylesheet" href="./files/style.css">
+
+</head>
+
+<body onload="getDetails()">
+    <!-- Header Section for Large Devices -->
+    <section id="introduction-section" class="introduction">
+        <center><img src="./files/header.png" width="80%"></center>
+    </section>
+
+    <!-- Registration Section -->
+    <section id="blood-section">
+        <div class="container">
+            <!--Table-->
+            <div class="card card-body mb-5">
+                <table class="table table-responsive-lg" id="blooddonationTable">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Donor Type</th>
+                            <th>Name</th>
+                            <th>Admission No.</th>
+                            <th>DOB</th>
+                            <th>Gender</th>
+                            <th>Blood Group</th>
+                            <th>Contact No</th>
+                            <th>Branch</th>
+                        </tr>
+                    </thead>
+                    <tbody id="blooddonation-table"></tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Footer Section -->
+    <footer class="fixed-bottom bg-dark pt-2 d-sm-done">
+        <div class="container">
+            <div class="row row1 mb-2">
+                <div class="cy col-lg-6 col-12">
+                    <span class="copyright_by">Copyright &copy; 2022 | NSS Club (ABESEC)</span>
+                </div>
+                <div class="dev col-lg-6 col-12">
+                    <span class="developer"><a onclick="logoutwithprompt()" style="cursor: pointer;">Developed</a> By <a
+                            href="https://rohitkumar.ml">Rohit Kumar</a> (Digital
+                        Head)</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Popup Mopdel-->
+    <div class="modal fade bd-example-modal-lg" style="background-color: white;" id="kalkritiModel" role="dialog"
+        style="z-index: 9999;" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <h1 style="background-color: rgb(255, 255, 255);">Welcome to Blood Donor Status Verification Portal</h1>
+            <div class="row">
+                <div class="col-12">
+                    <img src="./files/1.png" width="100%" alt="" class="img-fluid"></a>
+                </div>
+            </div>
+            <center><button type="button" class="btn btn-primary mt-2" data-dismiss="modal"
+                    style="cursor: pointer;">Close</button></center>
+        </div>
+    </div>
+
+    <!-- Firebase Scripts -->
+    <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-database.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script
+        src="https://cdn.jsdelivr.net/combine/npm/sweetalert2@11.3.2/dist/sweetalert2.all.min.js,npm/sweetalert2@11.3.2/dist/sweetalert2.min.js,npm/sweetalert2@11.3.2,npm/sweetalert2@11.3.2/dist/sweetalert2.min.js"></script>
+
+    <!-- Custom JS -->
+    <script src="./files/jquery.min.js"></script>
+    <script src="./files/firebase.js"></script>
+    <script src="./files/script.js"></script>
+    <!--Data Tables-->
+    <script src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/2.1.0/js/dataTables.buttons.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
+    <script src="https://cdn.datatables.net/buttons/2.1.0/js/buttons.html5.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/2.1.0/js/buttons.print.min.js"></script>
+</body>
+
+</html>
