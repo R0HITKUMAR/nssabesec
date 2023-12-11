@@ -1,0 +1,29 @@
+@import url("https://fonts.googleapis.com/css?family=Dosis:200,300,400,500,700");
+@import url("https://fonts.googleapis.com/css?family=Overpass:300,400,400i,600,700");
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css");
+@import url("https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css");
+@import url("./assets/css/vender/flaticon.css");
+@import url("./assets/css/vender/icomoon.css");
+@import url("./assets/css/vender/style.css");
+@import url("./assets/css/styles.css");
+
+/* Remove Properties from Button */
+button {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  outline: inherit;
+}
+
+button:focus {
+  outline: none;
+}
+
+.ftco-footer button {
+  color: #b7b5ae;
+}
+
+.navbar button:focus {
+  outline: none;
+}
